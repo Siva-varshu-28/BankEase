@@ -1,0 +1,496 @@
+/* =========================================================
+   BANKEASE COMMON ADMIN SIDEBAR
+   Professional Banking Administration Navigation
+========================================================= */
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.common-admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 18px;
+    overflow-y: auto;
+    background:
+        linear-gradient(
+            180deg,
+            #0b1f3a 0%,
+            #102d50 55%,
+            #0b223f 100%
+        );
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   SIDEBAR SCROLLBAR
+========================================================= */
+
+.common-admin-sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.common-admin-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.common-admin-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.common-admin-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 8px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   BANK LOGO ICON
+========================================================= */
+
+.common-admin-logo-icon {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 13px;
+    background:
+        linear-gradient(
+            135deg,
+            #2f80ed,
+            #1769d1
+        );
+    box-shadow:
+        0 8px 20px
+        rgba(47, 128, 237, 0.28);
+}
+
+
+/* =========================================================
+   BANK ROOF
+========================================================= */
+
+.common-bank-roof {
+    position: absolute;
+    top: 7px;
+    width: 27px;
+    height: 10px;
+    background: #ffffff;
+    clip-path:
+        polygon(
+            50% 0%,
+            100% 100%,
+            0% 100%
+        );
+}
+
+
+/* =========================================================
+   BANK BUILDING
+========================================================= */
+
+.common-bank-building {
+    position: absolute;
+    bottom: 8px;
+    width: 28px;
+    height: 18px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3px;
+    padding: 3px 4px 0;
+    background: #ffffff;
+    border-radius: 2px 2px 3px 3px;
+}
+
+
+/* =========================================================
+   BANK COLUMNS
+========================================================= */
+
+.common-bank-building span {
+    display: block;
+    width: 4px;
+    height: 11px;
+    border-radius: 1px;
+    background: #1769d1;
+}
+
+
+/* =========================================================
+   LOGO TEXT
+========================================================= */
+
+.common-admin-logo-text {
+    min-width: 0;
+}
+
+.common-admin-logo-text h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 1.2;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+}
+
+.common-admin-logo-text span {
+    display: block;
+    margin-top: 4px;
+    color: #9fb2cc;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.common-admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 24px;
+}
+
+
+/* =========================================================
+   NAVIGATION LABEL
+========================================================= */
+
+.common-admin-nav-label {
+    margin: 0 8px 5px;
+    color: #6f87a4;
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   NAV BUTTON
+========================================================= */
+
+.common-admin-nav button {
+    width: 100%;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 11px;
+    background: transparent;
+    color: #aebed2;
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    font-size: 14px;
+    font-weight: 550;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.common-admin-nav button:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   NAV ICON
+========================================================= */
+
+.common-nav-icon {
+    width: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 17px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   NAV LABEL TEXT
+========================================================= */
+
+.common-nav-label {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+.common-admin-nav button.active {
+    background:
+        linear-gradient(
+            135deg,
+            #2f80ed,
+            #1769d1
+        );
+    color: #ffffff;
+    box-shadow:
+        0 8px 18px
+        rgba(23, 105, 209, 0.25);
+}
+
+.common-admin-nav button.active:hover {
+    transform: none;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.common-admin-sidebar-bottom {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   SECURITY BADGE
+========================================================= */
+
+.common-admin-security-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 11px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.common-admin-security-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(47, 128, 237, 0.18);
+    font-size: 14px;
+}
+
+.common-admin-security-badge > div:last-child {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.common-admin-security-badge strong {
+    color: #dbe8f8;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.common-admin-security-badge span {
+    color: #7f96b2;
+    font-size: 9px;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.common-admin-logout {
+    width: 100%;
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #aebed2;
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    font-size: 14px;
+    font-weight: 550;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.common-admin-logout:hover {
+    background: rgba(255, 255, 255, 0.10);
+    color: #ffffff;
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .common-admin-sidebar {
+        width: 230px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .common-admin-logo {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .common-admin-logo-text h2 {
+        font-size: 18px;
+    }
+
+    .common-admin-nav button,
+    .common-admin-logout {
+        font-size: 13px;
+    }
+
+    .common-admin-security-badge span {
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .common-admin-sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        max-height: none;
+        overflow: visible;
+        padding: 16px;
+        border-right: none;
+    }
+
+    .common-admin-logo {
+        padding: 4px 4px 18px;
+    }
+
+    .common-admin-nav {
+        display: grid;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 16px;
+    }
+
+    .common-admin-nav-label {
+        grid-column: 1 / -1;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .common-admin-nav button {
+        min-height: 44px;
+        padding: 11px 12px;
+    }
+
+    .common-admin-sidebar-bottom {
+        margin-top: 14px;
+        padding-top: 14px;
+    }
+
+    .common-admin-security-badge {
+        margin-bottom: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .common-admin-sidebar {
+        padding: 14px;
+    }
+
+    .common-admin-logo-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .common-admin-logo-text h2 {
+        font-size: 18px;
+    }
+
+    .common-admin-logo-text span {
+        font-size: 10px;
+    }
+
+    .common-admin-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .common-admin-nav-label {
+        grid-column: auto;
+    }
+
+    .common-admin-security-badge {
+        padding: 10px;
+    }
+
+}

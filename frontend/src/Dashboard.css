@@ -1,0 +1,2238 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.dashboard-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+
+    background: #f5f7fb;
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: #14213d;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.dashboard-sidebar {
+    width: 270px;
+    min-height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 18px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #081b33 0%,
+            #0b294b 52%,
+            #0d3158 100%
+        );
+
+    color: white;
+
+    box-shadow:
+        8px 0 30px rgba(11, 35, 64, 0.10);
+
+    z-index: 50;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.dashboard-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        0 10px 30px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.dashboard-brand-icon {
+    width: 45px;
+    height: 45px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3b91ff,
+            #1768d7
+        );
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Bank Icon */
+
+.dashboard-bank-roof {
+    position: absolute;
+
+    width: 23px;
+    height: 7px;
+
+    top: 11px;
+
+    background: #ffffff;
+
+    clip-path:
+        polygon(
+            0 100%,
+            50% 0,
+            100% 100%
+        );
+}
+
+
+.dashboard-bank-building {
+    position: absolute;
+
+    width: 25px;
+    height: 17px;
+
+    top: 18px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+
+.dashboard-bank-building span {
+    width: 4px;
+    height: 13px;
+
+    background: white;
+
+    border-radius: 2px 2px 0 0;
+}
+
+
+.dashboard-bank-building::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -2px;
+
+    height: 3px;
+
+    background: white;
+
+    border-radius: 2px;
+}
+
+
+.dashboard-brand h2 {
+    margin: 0;
+
+    font-size: 21px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+
+.dashboard-brand h2 span {
+    color: #6eb0ff;
+}
+
+
+.dashboard-brand p {
+    margin: 4px 0 0;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.dashboard-navigation {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-top: 25px;
+}
+
+
+.dashboard-nav-label {
+    margin:
+        0 10px 8px;
+
+    color:
+        rgba(255, 255, 255, 0.34);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+}
+
+
+.dashboard-nav-item {
+    width: 100%;
+
+    min-height: 43px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        0 12px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color:
+        rgba(255, 255, 255, 0.63);
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.dashboard-nav-item:hover {
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    color: white;
+
+    transform: translateX(1px);
+}
+
+
+.dashboard-nav-item.active {
+    background:
+        linear-gradient(
+            135deg,
+            #2c83ed,
+            #1768d7
+        );
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(24, 103, 211, 0.25);
+}
+
+
+.dashboard-nav-icon {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+}
+
+
+.dashboard-nav-item.active
+.dashboard-nav-icon {
+    background:
+        rgba(255, 255, 255, 0.13);
+}
+
+
+/* =====================================================
+   SIDEBAR BOTTOM
+===================================================== */
+
+.dashboard-sidebar-bottom {
+    margin-top: auto;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.dashboard-bottom-item {
+    min-height: 41px;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        0 12px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+
+.dashboard-bottom-item:hover {
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    color: white;
+}
+
+
+.dashboard-bottom-item.logout:hover {
+    background:
+        rgba(220, 38, 38, 0.13);
+
+    color: #ff9b9b;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.dashboard-main {
+    width:
+        calc(100% - 270px);
+
+    min-width: 0;
+
+    margin-left: 270px;
+
+    padding:
+        30px 36px 42px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.dashboard-header {
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+
+.dashboard-welcome > span {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: #2a7be7;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.dashboard-header h1 {
+    margin: 0;
+
+    color: #16233a;
+
+    font-size: 27px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+}
+
+
+.dashboard-header p {
+    margin: 7px 0 0;
+
+    color: #7e8999;
+
+    font-size: 12px;
+}
+
+
+.dashboard-header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+/* =====================================================
+   NOTIFICATION
+===================================================== */
+
+.dashboard-notification-button {
+    width: 43px;
+    height: 43px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #e0e7f0;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #2a7be7;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 16px rgba(20, 42, 75, 0.07);
+
+    transition:
+        0.2s ease;
+}
+
+
+.dashboard-notification-button:hover {
+    border-color: #bcd6f8;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(20, 42, 75, 0.10);
+}
+
+
+.notification-badge {
+    position: absolute;
+
+    top: -4px;
+    right: -4px;
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        2px solid #f5f7fb;
+
+    border-radius: 20px;
+
+    background: #dc3944;
+
+    color: white;
+
+    font-size: 8px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.dashboard-profile-button {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        2px solid #e5eefc;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3184ef,
+            #175fbe
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(26, 102, 202, 0.20);
+
+    transition:
+        0.2s ease;
+}
+
+
+.dashboard-profile-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 22px rgba(26, 102, 202, 0.27);
+}
+
+
+/* =====================================================
+   ACCOUNT STRIP
+===================================================== */
+
+.dashboard-account-strip {
+    min-height: 82px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1px
+        1fr
+        1px
+        1fr;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin-bottom: 20px;
+
+    padding:
+        17px 22px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(20, 42, 75, 0.04);
+}
+
+
+.account-strip-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-width: 0;
+}
+
+
+.account-strip-item > span {
+    color: #9aa4b1;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.9px;
+}
+
+
+.account-strip-item strong {
+    color: #263650;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.account-strip-divider {
+    width: 1px;
+    height: 34px;
+
+    background: #edf0f5;
+}
+
+
+.account-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #16834a !important;
+}
+
+
+.account-status > span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #20b46b;
+
+    box-shadow:
+        0 0 0 4px rgba(32, 180, 107, 0.09);
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.dashboard-error {
+    min-height: 44px;
+
+    margin-bottom: 19px;
+
+    padding:
+        10px 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+        1px solid #f1d7d7;
+
+    border-radius: 10px;
+
+    background: #fff3f3;
+
+    color: #bd3c3c;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.dashboard-error > span {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #fbe1e1;
+
+    color: #c53a3a;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   BALANCE GRID
+===================================================== */
+
+.dashboard-balance-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1fr;
+
+    gap: 17px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =====================================================
+   BALANCE CARD
+===================================================== */
+
+.dashboard-balance-card {
+    min-height: 151px;
+
+    padding:
+        21px 22px;
+
+    background: #ffffff;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 6px 20px rgba(20, 42, 75, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.dashboard-balance-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(20, 42, 75, 0.07);
+}
+
+
+.dashboard-balance-card.primary {
+    border: none;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(255, 255, 255, 0.15),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #246fd5,
+            #155db5
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(27, 101, 198, 0.18);
+}
+
+
+.balance-card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.balance-card-label {
+    display: block;
+
+    margin-bottom: 11px;
+
+    color: #8a95a6;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+.dashboard-balance-card.primary
+.balance-card-label {
+    color:
+        rgba(255, 255, 255, 0.68);
+}
+
+
+.dashboard-balance-card h2 {
+    margin: 0;
+
+    color: #1a2840;
+
+    font-size: 26px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+}
+
+
+.dashboard-balance-card.primary h2 {
+    color: white;
+}
+
+
+.balance-card-icon {
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: #eff5fd;
+
+    color: #2d7fe9;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
+.balance-card-icon.income {
+    background: #eaf9f1;
+
+    color: #18a562;
+}
+
+
+.balance-card-icon.expense {
+    background: #fff0f0;
+
+    color: #db4545;
+}
+
+
+.dashboard-balance-card.primary
+.balance-card-icon {
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    color: white;
+}
+
+
+.balance-card-footer {
+    margin-top: 16px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #99a3b1;
+
+    font-size: 9px;
+}
+
+
+.dashboard-balance-card.primary
+.balance-card-footer {
+    color:
+        rgba(255, 255, 255, 0.62);
+}
+
+
+.balance-status-dot {
+    color: #48d291;
+
+    font-size: 9px;
+}
+
+
+.positive {
+    color: #1ba360 !important;
+}
+
+
+.negative {
+    color: #d94b4b !important;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.dashboard-section {
+    margin-bottom: 25px;
+}
+
+
+.dashboard-section-heading {
+    margin-bottom: 13px;
+}
+
+
+.dashboard-section-heading h2 {
+    margin: 0;
+
+    color: #1b2a41;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+
+.dashboard-section-heading p {
+    margin: 4px 0 0;
+
+    color: #909aaa;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.dashboard-quick-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+
+.dashboard-quick-action {
+    min-height: 69px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        12px 13px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    font-family: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.dashboard-quick-action:hover {
+    border-color: #bad4f6;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 22px rgba(20, 42, 75, 0.07);
+}
+
+
+.quick-action-icon {
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #eef5ff;
+
+    color: #287be7;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
+.quick-action-content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    flex: 1;
+}
+
+
+.quick-action-content strong {
+    overflow: hidden;
+
+    color: #26364e;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.quick-action-content span {
+    overflow: hidden;
+
+    color: #9aa4b1;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.quick-action-arrow {
+    color: #a1aaba;
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   ANALYTICS BANNER
+===================================================== */
+
+.dashboard-analytics-banner {
+    min-height: 102px;
+
+    margin-bottom: 24px;
+
+    padding:
+        18px 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border:
+        1px solid #dceafb;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf5ff,
+            #ffffff
+        );
+
+    box-shadow:
+        0 5px 18px rgba(36, 111, 213, 0.05);
+}
+
+
+.analytics-banner-left {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 0;
+}
+
+
+.analytics-banner-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #dcecff;
+
+    color: #2879df;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+
+.analytics-banner-left > div:last-child {
+    min-width: 0;
+}
+
+
+.analytics-banner-left > div:last-child > span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #3984df;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.1px;
+}
+
+
+.analytics-banner-left h2 {
+    margin: 0;
+
+    color: #1f3d70;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+
+.analytics-banner-left p {
+    margin: 5px 0 0;
+
+    color: #8391a3;
+
+    font-size: 9px;
+}
+
+
+.dashboard-analytics-banner > button {
+    min-height: 39px;
+
+    padding:
+        0 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2c83ed,
+            #1467d1
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 17px rgba(30, 112, 215, 0.18);
+
+    transition:
+        0.2s ease;
+}
+
+
+.dashboard-analytics-banner > button:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 21px rgba(30, 112, 215, 0.24);
+}
+
+
+.dashboard-analytics-banner > button span {
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   BOTTOM GRID
+===================================================== */
+
+.dashboard-bottom-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.45fr
+        1fr;
+
+    gap: 17px;
+}
+
+
+/* =====================================================
+   COMMON CARDS
+===================================================== */
+
+.dashboard-transactions-card,
+.dashboard-summary-card {
+    background: #ffffff;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius: 16px;
+
+    padding:
+        21px;
+
+    box-shadow:
+        0 6px 20px rgba(20, 42, 75, 0.04);
+}
+
+
+/* =====================================================
+   CARD HEADING
+===================================================== */
+
+.dashboard-card-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+
+.dashboard-card-heading > div > span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #9ba5b2;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.dashboard-card-heading h2 {
+    margin: 0;
+
+    color: #1b2b42;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
+.dashboard-card-heading button {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #2a7be7;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.dashboard-card-heading button:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   TRANSACTION LIST
+===================================================== */
+
+.dashboard-transaction-list {
+    width: 100%;
+}
+
+
+.dashboard-transaction-item {
+    min-height: 74px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        12px 0;
+
+    border-bottom:
+        1px solid #edf0f4;
+}
+
+
+.dashboard-transaction-item:last-child {
+    border-bottom: none;
+}
+
+
+.transaction-main {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.transaction-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+
+.transaction-icon.credit {
+    background: #eaf9f1;
+
+    color: #1ba360;
+}
+
+
+.transaction-icon.debit {
+    background: #fff0f0;
+
+    color: #db4949;
+}
+
+
+.transaction-details {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.transaction-details strong {
+    color: #27364b;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.transaction-details span {
+    max-width: 300px;
+
+    overflow: hidden;
+
+    color: #8490a0;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.transaction-details small {
+    color: #a2aab6;
+
+    font-size: 8px;
+}
+
+
+.transaction-amount {
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 4px;
+}
+
+
+.transaction-amount strong {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.credit-text {
+    color: #1aa15f;
+}
+
+
+.debit-text {
+    color: #d84747;
+}
+
+
+.transaction-status {
+    color: #1ca361;
+
+    font-size: 8px;
+
+    text-transform: capitalize;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.dashboard-empty-state {
+    min-height: 230px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.empty-state-icon {
+    width: 47px;
+    height: 47px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 11px;
+
+    border-radius: 13px;
+
+    background: #f1f6fd;
+
+    color: #6f94bf;
+
+    font-size: 18px;
+}
+
+
+.dashboard-empty-state h3 {
+    margin: 0;
+
+    color: #455468;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.dashboard-empty-state p {
+    margin: 6px 0 0;
+
+    color: #98a2b0;
+
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.dashboard-summary-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0;
+}
+
+
+.dashboard-summary-item {
+    min-height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom:
+        1px solid #edf0f4;
+}
+
+
+.dashboard-summary-item:last-child {
+    border-bottom: none;
+}
+
+
+.dashboard-summary-item span {
+    color: #929dac;
+
+    font-size: 9px;
+
+    flex-shrink: 0;
+}
+
+
+.dashboard-summary-item strong {
+    max-width: 58%;
+
+    overflow: hidden;
+
+    color: #324158;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-align: right;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.dashboard-summary-item.balance {
+    margin-top: 2px;
+}
+
+
+.dashboard-summary-item.balance strong {
+    color: #1f72da;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   SUMMARY ACTIONS
+===================================================== */
+
+.dashboard-summary-actions {
+    margin-top: 17px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.summary-action {
+    width: 100%;
+
+    min-height: 37px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+
+.summary-action:hover {
+    transform: translateY(-1px);
+}
+
+
+.summary-action.primary {
+    background: #edf5ff;
+
+    color: #2574d5;
+}
+
+
+.summary-action.secondary {
+    background: #f2f5f8;
+
+    color: #526174;
+}
+
+
+.summary-action.analytics {
+    background: #eef1ff;
+
+    color: #4b55bd;
+}
+
+
+.summary-action.bill {
+    background:
+        linear-gradient(
+            135deg,
+            #2c83ed,
+            #1467d1
+        );
+
+    color: white;
+
+    box-shadow:
+        0 7px 18px rgba(30, 112, 215, 0.16);
+}
+
+
+/* =====================================================
+   LOGIN REQUIRED
+===================================================== */
+
+.dashboard-login-required {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #edf4fc,
+            #f8fafc
+        );
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+.dashboard-login-box {
+    width: 100%;
+    max-width: 390px;
+
+    padding:
+        34px 30px;
+
+    background: white;
+
+    border:
+        1px solid #e4eaf2;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(20, 42, 75, 0.09);
+}
+
+
+.dashboard-login-icon {
+    width: 53px;
+    height: 53px;
+
+    margin:
+        0 auto 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #eef5ff;
+
+    font-size: 21px;
+}
+
+
+.dashboard-login-box h2 {
+    margin: 0;
+
+    color: #1d2c43;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+
+.dashboard-login-box p {
+    margin: 9px 0 21px;
+
+    color: #8490a0;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.dashboard-login-box button {
+    min-height: 43px;
+
+    padding:
+        0 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2c83ed,
+            #1467d1
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(30, 112, 215, 0.18);
+}
+
+
+/* =====================================================
+   RESPONSIVE — 1200
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .dashboard-main {
+        padding:
+            28px 27px 38px;
+    }
+
+    .dashboard-balance-grid {
+        grid-template-columns:
+            1.2fr
+            1fr
+            1fr;
+    }
+
+    .dashboard-bottom-grid {
+        grid-template-columns:
+            1.2fr
+            1fr;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — 1050
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .dashboard-sidebar {
+        width: 230px;
+    }
+
+    .dashboard-main {
+        width:
+            calc(100% - 230px);
+
+        margin-left: 230px;
+
+        padding:
+            24px 22px 34px;
+    }
+
+    .dashboard-balance-grid {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    .dashboard-balance-card.primary {
+        grid-column:
+            span 2;
+    }
+
+    .dashboard-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — 850
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .dashboard-sidebar {
+        width: 200px;
+        padding:
+            22px 13px 17px;
+    }
+
+    .dashboard-main {
+        width:
+            calc(100% - 200px);
+
+        margin-left: 200px;
+
+        padding:
+            22px 18px 30px;
+    }
+
+    .dashboard-brand {
+        padding-bottom: 22px;
+    }
+
+    .dashboard-brand-icon {
+        width: 39px;
+        height: 39px;
+    }
+
+    .dashboard-brand h2 {
+        font-size: 18px;
+    }
+
+    .dashboard-nav-item {
+        font-size: 10px;
+    }
+
+    .dashboard-account-strip {
+        grid-template-columns:
+            1fr;
+
+        gap: 11px;
+    }
+
+    .account-strip-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .dashboard-quick-actions {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — 700
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .dashboard-page {
+        display: block;
+    }
+
+
+    .dashboard-sidebar {
+        width: 100%;
+        min-height: auto;
+
+        position: relative;
+
+        padding:
+            16px 16px 14px;
+    }
+
+
+    .dashboard-brand {
+        padding:
+            0 4px 15px;
+    }
+
+
+    .dashboard-navigation,
+    .dashboard-sidebar-bottom {
+        display: none;
+    }
+
+
+    .dashboard-main {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding:
+            20px 16px 28px;
+    }
+
+
+    .dashboard-header {
+        align-items: flex-start;
+    }
+
+
+    .dashboard-welcome > span {
+        font-size: 8px;
+    }
+
+
+    .dashboard-header h1 {
+        font-size: 22px;
+    }
+
+
+    .dashboard-header p {
+        font-size: 10px;
+    }
+
+
+    .dashboard-balance-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .dashboard-balance-card.primary {
+        grid-column:
+            span 2;
+    }
+
+
+    .dashboard-analytics-banner {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .dashboard-analytics-banner > button {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    .dashboard-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — 520
+===================================================== */
+
+@media (max-width: 520px) {
+
+    .dashboard-main {
+        padding:
+            17px 12px 24px;
+    }
+
+
+    .dashboard-header {
+        margin-bottom: 17px;
+    }
+
+
+    .dashboard-header h1 {
+        font-size: 20px;
+    }
+
+
+    .dashboard-header-actions {
+        gap: 7px;
+    }
+
+
+    .dashboard-notification-button,
+    .dashboard-profile-button {
+        width: 39px;
+        height: 39px;
+    }
+
+
+    .dashboard-account-strip {
+        padding:
+            15px 16px;
+    }
+
+
+    .dashboard-balance-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .dashboard-balance-card.primary {
+        grid-column:
+            span 1;
+    }
+
+
+    .dashboard-quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .dashboard-quick-action {
+        min-height: 64px;
+    }
+
+
+    .dashboard-transactions-card,
+    .dashboard-summary-card {
+        padding:
+            17px;
+    }
+
+
+    .dashboard-transaction-item {
+        align-items: flex-start;
+    }
+
+
+    .transaction-details span {
+        max-width: 190px;
+    }
+
+
+    .dashboard-summary-item strong {
+        max-width: 54%;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE — 390
+===================================================== */
+
+@media (max-width: 390px) {
+
+    .dashboard-brand h2 {
+        font-size: 17px;
+    }
+
+
+    .dashboard-header {
+        gap: 10px;
+    }
+
+
+    .dashboard-welcome {
+        min-width: 0;
+    }
+
+
+    .dashboard-header h1 {
+        font-size: 18px;
+    }
+
+
+    .dashboard-notification-button,
+    .dashboard-profile-button {
+        width: 37px;
+        height: 37px;
+    }
+
+
+    .dashboard-balance-card h2 {
+        font-size: 23px;
+    }
+
+
+    .dashboard-card-heading h2 {
+        font-size: 14px;
+    }
+
+
+    .dashboard-transaction-item {
+        gap: 8px;
+    }
+
+
+    .transaction-details span {
+        max-width: 145px;
+    }
+
+
+    .transaction-amount strong {
+        font-size: 10px;
+    }
+
+}
